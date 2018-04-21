@@ -3,6 +3,7 @@ package main
 import (
 	"encoding/json"
 	"fmt"
+	"io/ioutil
 
 	"github.com/gramework/gramework"
 	"github.com/valyala/fasthttp"
@@ -24,6 +25,7 @@ type jsonResponse struct {
 func main() {
 	app := gramework.New()
 
+	//ioutil.ReadDir("templates")
 	// TODO serve html with vue.js from file system
 	app.GET("/", app.ServeDir("templates"))
 	// app.GET("/", app.ServeDirCustom("templates", 0, true, false, []string{"index.html", "about.html"}))
