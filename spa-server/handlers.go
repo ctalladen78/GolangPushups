@@ -130,6 +130,7 @@ func errorHandler(w http.ResponseWriter, code int, format string, a ...interface
 	http.Error(w, string(b), code)
 }
 
+// send email to sendgrid api service
 func emailHandler(w http.ResponseWriter, r *http.Request) {
 	url := "https://api.sendgrid.com/v3/mail/send"
 
